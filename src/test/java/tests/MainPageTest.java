@@ -13,7 +13,7 @@ public class MainPageTest extends BaseTest{
 		
 		MainPage mainPage = new MainPage(driver);
 		String res = mainPage.getTitle();
-		AssertJUnit.assertEquals("Happy Days1", res);
+		AssertJUnit.assertEquals("Happy Days", res);
 	}
 	
 	@Test
