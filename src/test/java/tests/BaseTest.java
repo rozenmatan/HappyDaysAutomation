@@ -33,6 +33,7 @@ public class BaseTest {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		   capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 		   capabilities.setCapability("deviceName", "Google Pixel 2 XL");
+		   capabilities.setCapability("deviceName", "Google Pixel 2 XL");
 		   capabilities.setCapability("appPackage", "com.happy.yday");
 		   capabilities.setCapability("appActivity","com.happy.yday.MainActivity");
 		   capabilities.setCapability(MobileCapabilityType.UDID, "712KPKN1244077");

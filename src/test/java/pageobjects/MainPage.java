@@ -1,10 +1,19 @@
 package pageobjects;
 
+
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class MainPage extends BasePage{
+public class MainPage extends CommonElementsAndFunctions{
 
 	@AndroidFindBy(id="com.happy.yday:id/title")
 	private MobileElement title;
@@ -23,6 +32,43 @@ public class MainPage extends BasePage{
 	
 	public void clickOnMusicButton() {
 		
-		tap(musicButton);		
+		tap(musicButton);
+		
 	}
+	
+	public void verifyCategoriesExistence() {
+		
+		Set<String> categorieNames = new HashSet<String>();
+		
+		while(categorieNames.size() < 12) {
+			
+			for(int i = 1;i <= categories.size();i++) {
+				try {
+					String categorieName = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout["+i+"]/android.widget.RelativeLayout/android.widget.TextView")).getText();
+					categorieNames.add(categorieName);
+				}catch (NoSuchElementException e) {
+					// TODO: handle exception
+				}
+
+			}
+			scrollDown();
+		}
+		scrollToTop();
+	}
+	
+	public void verifyCategoriesFuncuallty(List<String> categoriesNames) {
+		
+		for(int i = 0;i < categoriesNames.size();i++) {
+			
+			clickOnCategory(categoriesNames.get(i));
+			back();
+			waitForElementToBeVisible(title);
+			waitForElementToBeVisible(categories.get(0));
+			
+			
+			
+		}
+	}
+	
+	
 }
