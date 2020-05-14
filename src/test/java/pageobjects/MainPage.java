@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.testng.AssertJUnit;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -25,6 +26,13 @@ public class MainPage extends CommonElementsAndFunctions{
 	private MobileElement noButtonExitPopUp;
 	@AndroidFindBy(id="android:id/button1")
 	private MobileElement yesButtonExitPopUp;
+	@AndroidFindBy(id="com.happy.yday:id/nav_view")
+	private MobileElement buttomMenu;
+	@AndroidFindBy(id="com.happy.yday:id/navigation_favorites")
+	private MobileElement favoritesButton;
+	@AndroidFindBy(id="com.happy.yday:id/navigation_home")
+	private MobileElement moodButton;
+	
 	
 	
 	public MainPage(AndroidDriver<MobileElement> driver) {
@@ -95,5 +103,17 @@ public class MainPage extends CommonElementsAndFunctions{
 		
 	}
 	
+	public void verifyButtomMenuIsShowing() {
+		
+		waitForElementToBeVisible(buttomMenu);
+	}
+	
+	public void verifyButtomMenuFancuallty(String favoritesText,String mainText) {
+		
+		tap(favoritesButton);
+		waitForTextToBePresentOnElement(title,favoritesText);
+		tap(moodButton);
+		waitForTextToBePresentOnElement(title,mainText);
+	}
 	
 }

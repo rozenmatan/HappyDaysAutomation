@@ -1,6 +1,9 @@
 package pageobjects;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -75,5 +78,15 @@ public class BasePage {
 	protected void waitForElementToInvisible(MobileElement el) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.until(ExpectedConditions.invisibilityOf(el));
+	}
+	
+	protected void waitForTextToBePresentOnElement(MobileElement el, final String txt) {
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		wait.until(new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver d) {
+				return el.getText().equals(txt);
+			}
+		});
+
 	}
 }

@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -69,6 +68,19 @@ public class MainPageTest extends BaseTest{
 		mainPage.verifyExitPopUpFuncuallty();
 	}
 	
+	@Test
+	public void verifyButtomMenuIsShowing() {
+		
+		MainPage mainPage = new MainPage(driver);
+		mainPage.verifyButtomMenuIsShowing();
+	}
 	
+	@Test
+	public void verifyButtomMenuFancuallty() {
+		
+		MainPage mainPage = new MainPage(driver);
+		mainPage.verifyButtomMenuFancuallty("Favorites", "Happy Days");
+		
+	}
 	
 }
