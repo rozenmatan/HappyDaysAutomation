@@ -1,12 +1,11 @@
 package tests;
 
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 
 import pageobjects.MainPage;
@@ -56,6 +55,19 @@ public class MainPageTest extends BaseTest{
 		mainPage.verifyCategoriesFuncuallty(categorieNames);
 	}
 	
+	@Test
+	public void verifyExitPopUpIsShowing() {
+		
+		MainPage mainPage = new MainPage(driver);
+		mainPage.verifyExitPopUpIsShowing();
+	}
+	
+	@Test
+	public void verifyExitPopUpFuncuallty() {
+		
+		MainPage mainPage = new MainPage(driver);
+		mainPage.verifyExitPopUpFuncuallty();
+	}
 	
 	
 	

@@ -19,6 +19,13 @@ public class MainPage extends CommonElementsAndFunctions{
 	private MobileElement title;
 	@AndroidFindBy(id="com.happy.yday:id/imageViewSound")
 	private MobileElement musicButton;
+	@AndroidFindBy(id="android:id/message")
+	private MobileElement exitPopUp;
+	@AndroidFindBy(id="android:id/button2")
+	private MobileElement noButtonExitPopUp;
+	@AndroidFindBy(id="android:id/button1")
+	private MobileElement yesButtonExitPopUp;
+	
 	
 	public MainPage(AndroidDriver<MobileElement> driver) {
 		
@@ -65,9 +72,27 @@ public class MainPage extends CommonElementsAndFunctions{
 			waitForElementToBeVisible(title);
 			waitForElementToBeVisible(categories.get(0));
 			
-			
-			
 		}
+	}
+	
+	public void verifyExitPopUpIsShowing() {
+		
+		back();
+		waitForElementToBeVisible(exitPopUp);
+		back();
+		waitForElementToBeVisible(title);
+		waitForElementToBeVisible(categories.get(0));
+	}
+	
+	public void verifyExitPopUpFuncuallty() {
+		
+		back();
+		waitForElementToBeVisible(exitPopUp);
+		waitForElementToBeVisible(yesButtonExitPopUp);
+		tap(noButtonExitPopUp);
+		waitForElementToBeVisible(title);
+		waitForElementToBeVisible(categories.get(0));
+		
 	}
 	
 	
