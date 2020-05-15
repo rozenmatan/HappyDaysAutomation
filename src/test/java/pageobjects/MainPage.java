@@ -8,8 +8,6 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.testng.AssertJUnit;
-
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -42,7 +40,7 @@ public class MainPage extends CommonElementsAndFunctions{
 	
 	public String getTitle() {
 		
-		return title.getText();
+		return getText(title);
 	}
 	
 	public void clickOnMusicButton() {

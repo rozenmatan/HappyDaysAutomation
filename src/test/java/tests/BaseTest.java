@@ -47,7 +47,7 @@ public class BaseTest {
 
 
 	}
-	@BeforeClass
+	@BeforeSuite(dependsOnMethods = "setup")
 	public void moveToMainMenu() {
 		
 		SplashPage splashPage = new SplashPage(driver);

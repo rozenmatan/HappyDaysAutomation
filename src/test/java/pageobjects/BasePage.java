@@ -27,7 +27,10 @@ public class BasePage {
 		PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
 
 	}
-	
+	protected String getText(MobileElement el) {
+		
+		return el.getText();
+	}
 	protected void tap(MobileElement el) {
 		
 		action.tap(PointOption.point(el.getLocation().x,el.getLocation().y)).perform();
@@ -88,5 +91,19 @@ public class BasePage {
 			}
 		});
 
+	}
+	
+	protected void waitForElementToBeFixAtLocation(MobileElement el) {
+		waitForElementToBeVisible(el);
+		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		wait.until(new ExpectedCondition<Boolean>() {
+			public Boolean apply(WebDriver d) {
+				int x = el.getLocation().getX();
+				int y = el.getLocation().getY();
+				if (el.getLocation().getX() == x && el.getLocation().getY() == y)
+					return true;
+				return false;
+			}
+		});
 	}
 }

@@ -1,6 +1,8 @@
 package tests;
 
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
