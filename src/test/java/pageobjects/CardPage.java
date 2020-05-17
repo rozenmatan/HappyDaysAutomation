@@ -24,6 +24,7 @@ public class CardPage extends CommonElementsAndFunctions{
 	
 	public String getCardText() {
 		
+		waitForElementToBeFixAtLocation(cardText);
 		return getText(cardText);
 	}
 	public void swipeCardUp() {
