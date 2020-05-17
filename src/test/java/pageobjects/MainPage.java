@@ -50,7 +50,6 @@ public class MainPage extends CommonElementsAndFunctions{
 			for(int i = 1;i <= categories.size();i++) {
 				try {
 					MobileElement categorie = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout["+i+"]/android.widget.RelativeLayout/android.widget.TextView"));
-					waitForElementToBeFixAtLocation(categorie);
 					String categorieName = categorie.getText();
 					categorieNames.add(categorieName);
 				}catch (NoSuchElementException e) {

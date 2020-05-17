@@ -65,12 +65,12 @@ public class BasePage {
 	
 	protected void scrollDown() {
 		
-		swipeByCoordinate(15, 2400, 15, 1800);
+		swipeByCoordinate(15, 2400, 15, 2000);
 	}
 	
 	protected void scrollUp() {
 		
-		swipeByCoordinate(15, 1800, 15, 2400);
+		swipeByCoordinate(15, 2000, 15, 2400);
 	}
 	
 	protected void back() {
