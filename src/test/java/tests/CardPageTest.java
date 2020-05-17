@@ -15,7 +15,7 @@ public class CardPageTest extends BaseTest{
 		cardPage.clickOnCategory("Success");
 	}
 	
-	//@Test
+	@Test
 	public void swipeCardUp() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -23,7 +23,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	//@Test
+	@Test
 	public void swipeCardDown() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -31,7 +31,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	//@Test
+	@Test
 	public void swipeCardLeft() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -39,7 +39,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	//@Test
+	@Test
 	public void swipeCardRight() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -47,7 +47,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	//@Test
+	@Test
 	public void swipeCardBackAndForth() {
 		
 		CardPage cardPage = new CardPage(driver);
