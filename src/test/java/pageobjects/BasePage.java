@@ -65,12 +65,12 @@ public class BasePage {
 	
 	protected void scrollDown() {
 		
-		swipeByCoordinate(15, 2400, 15, 2000);
+		swipeByCoordinate(15, 2400, 15, 1600);
 	}
 	
 	protected void scrollUp() {
 		
-		swipeByCoordinate(15, 2000, 15, 2400);
+		swipeByCoordinate(15, 1600, 15, 2400);
 	}
 	
 	protected void back() {
@@ -100,7 +100,6 @@ public class BasePage {
 	}
 	
 	protected void waitForElementToBeFixAtLocation(MobileElement el) {
-		waitForElementToBeVisible(el);
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {

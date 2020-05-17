@@ -18,6 +18,8 @@ public class CommonElementsAndFunctions extends BasePage{
 	protected List <MobileElement> categories;
 	@AndroidFindBy(id="com.happy.yday:id/imageViewSound")
 	protected MobileElement musicButton;
+	@AndroidFindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView")
+	protected MobileElement cardText;
 	
 	
 	
@@ -37,7 +39,7 @@ public class CommonElementsAndFunctions extends BasePage{
 					String categorieName = categorie.getText();
 					if(categorieName.equals(choosenCategory)) {
 						tap(categorie);
-						waitForElementToBeVisible(likeCount);
+						waitForElementToBeFixAtLocation(likeCount);
 						return;
 					}
 				}catch (NoSuchElementException e) {
@@ -70,6 +72,5 @@ public class CommonElementsAndFunctions extends BasePage{
 		tap(musicButton);
 		
 	}
-	
 
 }
