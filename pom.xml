@@ -66,10 +66,7 @@
 	          	<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 	          </suiteXmlFiles>
 	          <systemPropertyVariables>
-	          		<browser>chrome</browser>
-	          		<env>local</env>
-	          		<video>false</video>
-	          		<ip>localhost</ip>
+	          		<env>android</env>
 	          </systemPropertyVariables>
    				<argLine>
 					-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

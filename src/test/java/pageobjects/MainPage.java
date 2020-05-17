@@ -16,8 +16,6 @@ public class MainPage extends CommonElementsAndFunctions{
 
 	@AndroidFindBy(id="com.happy.yday:id/title")
 	private MobileElement title;
-	@AndroidFindBy(id="com.happy.yday:id/imageViewSound")
-	private MobileElement musicButton;
 	@AndroidFindBy(id="android:id/message")
 	private MobileElement exitPopUp;
 	@AndroidFindBy(id="android:id/button2")
@@ -41,12 +39,6 @@ public class MainPage extends CommonElementsAndFunctions{
 	public String getTitle() {
 		
 		return getText(title);
-	}
-	
-	public void clickOnMusicButton() {
-		
-		tap(musicButton);
-		
 	}
 	
 	public void verifyCategoriesExistence() {

@@ -13,9 +13,11 @@ public class CommonElementsAndFunctions extends BasePage{
 	AndroidDriver<MobileElement> driver;
 	
 	@AndroidFindBy(id="com.happy.yday:id/textLikeCount")
-	MobileElement likeCount;
+	protected MobileElement likeCount;
 	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout")
-	List <MobileElement> categories;
+	protected List <MobileElement> categories;
+	@AndroidFindBy(id="com.happy.yday:id/imageViewSound")
+	protected MobileElement musicButton;
 	
 	
 	
@@ -61,6 +63,12 @@ public class CommonElementsAndFunctions extends BasePage{
 			scrollUp();
 		}
 
+	}
+	
+	public void clickOnMusicButton() {
+		
+		tap(musicButton);
+		
 	}
 	
 

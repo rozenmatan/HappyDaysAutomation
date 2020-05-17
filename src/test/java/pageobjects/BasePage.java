@@ -41,8 +41,14 @@ public class BasePage {
 	}
 	
 	protected void swipeByCoordinate(int fromX,int fromY,int toX,int toY) {
+		
 		action.press(PointOption.point(fromX,fromY)).moveTo(PointOption.point(toX,toY)).release().perform();
 		
+	}
+	
+	protected void swipeBackAndForth(int fromX,int fromY,int toX,int toY) {
+		
+		action.press(PointOption.point(fromX,fromY)).moveTo(PointOption.point(toX,toY)).moveTo(PointOption.point(fromX,fromY)).release().perform();
 	}
 	
 	protected void turnOffData() {

@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 
 import pageobjects.CardPage;
+import pageobjects.MainPage;
 
 public class CardPageTest extends BaseTest{
 
@@ -14,7 +15,7 @@ public class CardPageTest extends BaseTest{
 		cardPage.clickOnCategory("Success");
 	}
 	
-	@Test
+	//@Test
 	public void swipeCardUp() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -22,7 +23,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	@Test
+	//@Test
 	public void swipeCardDown() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -30,7 +31,7 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	@Test
+	//@Test
 	public void swipeCardLeft() {
 		
 		CardPage cardPage = new CardPage(driver);
@@ -38,11 +39,26 @@ public class CardPageTest extends BaseTest{
 
 	}
 	
-	@Test
+	//@Test
 	public void swipeCardRight() {
 		
 		CardPage cardPage = new CardPage(driver);
 		cardPage.swipeCardRight();
 
+	}
+	
+	//@Test
+	public void swipeCardBackAndForth() {
+		
+		CardPage cardPage = new CardPage(driver);
+		cardPage.swipeCardBackAndForth();
+	}
+	
+	@Test
+	public void clickOnMusicButton() {
+		
+		CardPage cardPage = new CardPage(driver);
+		cardPage.clickOnMusicButton();
+		
 	}
 }

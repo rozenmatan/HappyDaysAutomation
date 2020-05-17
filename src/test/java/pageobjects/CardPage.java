@@ -51,4 +51,12 @@ public class CardPage extends CommonElementsAndFunctions{
 		waitForElementToBeFixAtLocation(cardText);
 		AssertJUnit.assertNotSame(text, getCardText());
 	}
+	
+	public void swipeCardBackAndForth() {
+		
+		String text = getCardText();
+		swipeBackAndForth(700, 1100, 1200, 1100);
+		waitForElementToBeFixAtLocation(cardText);
+		AssertJUnit.assertEquals(text, getCardText());
+	}
 }
