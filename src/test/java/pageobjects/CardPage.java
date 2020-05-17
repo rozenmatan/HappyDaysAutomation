@@ -8,8 +8,14 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class CardPage extends CommonElementsAndFunctions{
 
-	@AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView")
+	@AndroidFindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.TextView")
 	private MobileElement cardText;
+	@AndroidFindBy(id="com.happy.yday:id/imageViewFavorites")
+	private MobileElement favortieButton;
+	@AndroidFindBy(id="com.happy.yday:id/share_button")
+	private MobileElement shareButton;
+	@AndroidFindBy(id="com.happy.yday:id/like_button")
+	private MobileElement likeButton;
 	
 	public CardPage(AndroidDriver<MobileElement> driver) {
 		super(driver);
