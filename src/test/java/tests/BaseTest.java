@@ -41,8 +41,7 @@ public class BaseTest {
 		   capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 		   capabilities.setCapability("newCommandTimeout", 120);
 		   driver = new AndroidDriver<MobileElement>(new URL("http://matanrozen.ddns.net:4723/wd/hub"), capabilities);
-		   testContext.setAttribute("AndroidDriver", this.driver);
-		   
+		   testContext.setAttribute("AndroidDriver", this.driver);		   
 		   
 
 
